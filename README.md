@@ -12,7 +12,7 @@ The system is developed for deploying an easy and a secure way of taking down at
 >Face recognition devices create a 3D model of your face by mapping out distinct points. The system then stores a numerical code to represent this model. The numerical code cannot be used for anything other to check if it is you in front of the camera.
 
 ## How it works?
-We use three libraries *face_recognition*,*mtcnn* and *cv2*
+We use three libraries *face_recognition*,*mtcnn* and *cv2* for Facial Recognition. Teacher can take attendance with just a single click, A closed portal is used for this. The teacher must first login to the online portal before he/she can take attendance. When the button is clicked the camera captures the photo which is then compared to the face encodings already stored in the database.
 
 ```
 import face_recognition
