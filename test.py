@@ -1,14 +1,15 @@
 import face_recognition
 import cv2
+
 l = []
 video_capture = cv2.VideoCapture(0)
 
 # Load a sample picture and learn how to recognize it.
-deepak_image = face_recognition.load_image_file("deepak.jpg")
+deepak_image = face_recognition.load_image_file("Deepak.jpg")
 deepak_face_encoding = face_recognition.face_encodings(deepak_image)[0]
 
 # Load a second sample picture and learn how to recognize it.
-deeshant_image = face_recognition.load_image_file("deeshant.jpg")
+deeshant_image = face_recognition.load_image_file("Deeshant.jpg")
 deeshant_face_encoding = face_recognition.face_encodings(deeshant_image)[0]
 
 rahul_image = face_recognition.load_image_file("Rahul.jpg")
@@ -21,8 +22,8 @@ known_face_encodings = [
     rahul_face_encoding
 ]
 known_face_names = [
-    "deepak",
-    "deeshant",
+    "Deepak",
+    "Deeshant",
     "Rahul"
 ]
 
@@ -51,7 +52,7 @@ while True:
         face_names = []
         for face_encoding in face_encodings:
             # See if the face is a match for the known face(s)
-            matches = face_recognition.compare_faces(known_face_encodings, face_encoding)
+            matches = face_recognition.compare_faces(known_face_encodings, face_encoding, tolerance=0.4)
             name = "Unknown"
 
             # If a match was found in known_face_encodings, just use the first one.
